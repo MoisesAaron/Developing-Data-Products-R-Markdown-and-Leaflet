@@ -1,0 +1,32 @@
+---
+title: "Developing Data Products R Markdown and Leaflet"
+author: "Moisés Aarón Ruiz García"
+date: "19/11/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Library
+First, we charge the library to use
+
+```{r cars}
+library(leaflet)
+```
+
+## Map
+
+Create the map:
+```{r}
+my_map <- leaflet() %>%
+  addTiles()
+
+my_map <- my_map %>%
+  addMarkers(lat=19.6922729, lng=-98.8435035,
+             popup="Piramide del Sol")
+my_map
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
